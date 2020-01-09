@@ -55,7 +55,7 @@ export class CourtFinderClient {
 
             courtFinderResponse.addAll(
                 responseBody.map((court: any) => {
-                    let newCourt = new Court(
+                    const newCourt = new Court(
                         court.name,
                         court.lat,
                         court.lon,
