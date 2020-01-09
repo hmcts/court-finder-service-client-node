@@ -1,0 +1,64 @@
+{
+  "name": "@hmcts/court-finder-service-client",
+  "version": "1.0.1",
+  "description": "Court and tribunal finder service client (https://courttribunalfinder.service.gov.uk/api.html)",
+  "license": "MIT",
+  "repository": "https://github.com/hmcts/court-finder-service-client-node",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib && rimraf coverage",
+    "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
+    "lint": "tslint --project tsconfig.json --format verbose",
+    "prebuildOnly": "yarn clean && yarn format && yarn lint && echo Using TypeScript && tsc --version",
+    "build": "tsc --pretty",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "watch": "yarn build --watch",
+    "watch:test": "jest --watch"
+  },
+  "dependencies": {
+    "csv-parser": "^2.3.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.8",
+    "@types/nock": "^8.2.1",
+    "@types/node": "^8.0.0",
+    "@types/request-promise-native": "^1.0.10",
+    "@types/supertest": "^2.0.4",
+    "gulp": "^4.0.0",
+    "jest": "^21.2.1",
+    "nock": "^9.1.4",
+    "prettier": "^1.5.2",
+    "rimraf": "^2.0.0",
+    "sinon": "^4.1.2",
+    "supertest": "^3.0.0",
+    "ts-jest": "^21.2.4",
+    "ts-node": "^3.2.0",
+    "tslint": "^5.0.0",
+    "tslint-config-prettier": "^1.1.0",
+    "typescript": "^2.9.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testEnvironment": "node"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
