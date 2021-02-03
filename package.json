@@ -21,7 +21,7 @@
     "watch:test": "jest --watch"
   },
   "dependencies": {
-    "csv-parser": "^2.3.2",
+    "csv-parser": "^2.3.5",
     "mem": "^4.0.0",
     "mimic-fn": "^3.0.0",
     "request": "^2.88.0",
